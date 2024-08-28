@@ -1,9 +1,17 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { LanguageContext } from '../context'
 import './start.css'
 
 type DropdownProps = {
   setter: (value: string) => void;
+}
+
+type StartViewProps = {
+  setRace: (value: string) => void;
+  setClass: (value: string) => void;
+  setBackground: (value: string) => void;
+  setCharisma: (value: string) => void;
+  startGeneration: () => void;
 }
 
 function RaceDropdown(props: DropdownProps) {
@@ -78,20 +86,15 @@ function CharismaDropdown(props: DropdownProps) {
   )
 }
 
-function StartView() {
-  const [race, setRace] = useState("Human");
-  const [clas, setClas] = useState("Fighter");
-  const [bg, setBg] = useState("Acolyte");
-  const [cha, setCha] = useState("0");
-
+function StartView(props: StartViewProps) {
   return (
     <>
-      <RaceDropdown setter={setRace}></RaceDropdown>
-      <ClassDropdown setter={setClas}></ClassDropdown>
-      <BackgroundDropdown setter={setBg}></BackgroundDropdown>
-      <CharismaDropdown setter={setCha}></CharismaDropdown>
+      <RaceDropdown setter={props.setRace}></RaceDropdown>
+      <ClassDropdown setter={props.setClass}></ClassDropdown>
+      <BackgroundDropdown setter={props.setBackground}></BackgroundDropdown>
+      <CharismaDropdown setter={props.setCharisma}></CharismaDropdown>
       <br></br>
-      <button>GENERATE</button>
+      <button onClick={() => props.startGeneration()}>GENERATE</button>
     </>
   )
 }
