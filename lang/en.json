@@ -54,6 +54,10 @@
             "@cha-2": "2",
             "@cha-3": "3",
             "@cha-class": "Based on class"
+        },
+
+        "commands": {
+            "@generate-button": "GENERATE"
         }
     }
 }

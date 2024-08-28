@@ -3,6 +3,7 @@ import { LanguageContext } from '../context'
 import './start.css'
 
 type DropdownProps = {
+  langObject: any;
   setter: (value: string) => void;
 }
 
@@ -14,87 +15,33 @@ type StartViewProps = {
   startGeneration: () => void;
 }
 
-function RaceDropdown(props: DropdownProps) {
-  const languageFile = useContext(LanguageContext);
-
-  let races: JSX.Element[] = []
-  for (let raceKey of Object.keys(languageFile.ui.races)) {
-    let raceName = languageFile.ui.races[raceKey];
-    races.push(<option value={raceName}>{raceName}</option>,)
-  }
-
-  return (
-    <>
-      <select onChange={(event) => props.setter(event.target.value)}>
-        {races}
-      </select>
-    </>
-  )
-}
-
-function ClassDropdown(props: DropdownProps) {
-  const languageFile = useContext(LanguageContext);
-
-  let classes: JSX.Element[] = []
-  for (let classKey of Object.keys(languageFile.ui.classes)) {
-    let className = languageFile.ui.classes[classKey];
-    classes.push(<option value={className}>{className}</option>,)
-  }
-
-  return (
-    <>
-      <select onChange={(event) => props.setter(event.target.value)}>
-        {classes}
-      </select>
-    </>
-  )
-}
-
-function BackgroundDropdown(props: DropdownProps) {
-  const languageFile = useContext(LanguageContext);
-
-  let backgrounds: JSX.Element[] = []
-  for (let backgroundKey of Object.keys(languageFile.ui.backgrounds)) {
-    let backgroundName = languageFile.ui.backgrounds[backgroundKey];
-    backgrounds.push(<option value={backgroundName}>{backgroundName}</option>,)
-  }
-
-  return (
-    <>
-      <select onChange={(event) => props.setter(event.target.value)}>
-        {backgrounds}
-      </select>
-    </>
-  )
-}
-
-function CharismaDropdown(props: DropdownProps) {
-  const languageFile = useContext(LanguageContext);
-
-  let scores: JSX.Element[] = []
-  for (let charismaKey of Object.keys(languageFile.ui.charisma)) {
-    let charismaValue = languageFile.ui.charisma[charismaKey];
-    scores.push(<option value={charismaValue}>{charismaValue}</option>,)
+function Dropdown(props: DropdownProps) {
+  let elements: JSX.Element[] = []
+  for (let key of Object.keys(props.langObject)) {
+    let value = props.langObject[key];
+    elements.push(<option value={value}>{value}</option>,)
   }
 
   return (
     <>
       <select defaultValue={"0"} onChange={(event) => props.setter(event.target.value)}>
-        {scores}
+        {elements}
       </select>
     </>
   )
 }
 
 function StartView(props: StartViewProps) {
+  const languageFile = useContext(LanguageContext);
+
   return (
     <>
-      <RaceDropdown setter={props.setRace}></RaceDropdown>
-      <ClassDropdown setter={props.setClass}></ClassDropdown>
-      <BackgroundDropdown setter={props.setBackground}></BackgroundDropdown>
-      <CharismaDropdown setter={props.setCharisma}></CharismaDropdown>
+      <Dropdown langObject={languageFile.ui.races} setter={props.setRace}></Dropdown>
+      <Dropdown langObject={languageFile.ui.classes} setter={props.setClass}></Dropdown>
+      <Dropdown langObject={languageFile.ui.backgrounds} setter={props.setBackground}></Dropdown>
+      <Dropdown langObject={languageFile.ui.charisma} setter={props.setCharisma}></Dropdown>
       <br></br>
-      <button onClick={() => props.startGeneration()}>GENERATE</button>
+      <button onClick={() => props.startGeneration()}>{languageFile.ui.commands["@generate-button"]}</button>
     </>
   )
 }
