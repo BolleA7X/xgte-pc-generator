@@ -1,0 +1,59 @@
+{
+    "ui": {
+        "races": {
+            "@dragonborn-name": "Dragonborn",
+            "@dwarf-name": "Dwarf",
+            "@elf-name": "Elf",
+            "@gnome-name": "Gnome",
+            "@halfelf-name": "Half-Elf",
+            "@halfling-name": "Halfling",
+            "@halforc-name": "Half-Orc",
+            "@human-name": "Human",
+            "@tiefling-name": "Tiefling"
+        },
+
+        "classes": {
+            "@barbarian-name": "Barbarian",
+            "@bard-name": "Bard",
+            "@cleric-name": "Cleric",
+            "@druid-name": "Druid",
+            "@fighter-name": "Fighter",
+            "@monk-name": "Monk",
+            "@paladin-name": "Paladin",
+            "@ranger-name": "Ranger",
+            "@rogue-name": "Rogue",
+            "@sorcerer-name": "Sorcerer",
+            "@warlock-name": "Warlock",
+            "@wizard-name": "Wizard"
+        },
+
+        "backgrounds": {
+            "@acolyte-name": "Acolyte",
+            "@charlatan-name": "Charlatan",
+            "@criminal_spy-name": "Criminal / Spy",
+            "@entertainer-name": "Entertainer",
+            "@folkhero-name": "Folk Hero",
+            "@gladiator-name": "Gladiator",
+            "@guild-name": "Guild Artisan",
+            "@hauntedone-name": "Haunted One",
+            "@hermit-name": "Hermit",
+            "@knight-name": "Knight",
+            "@noble-name": "Noble",
+            "@outlander-name": "Outlander",
+            "@pirate-name": "Pirate",
+            "@sage-name": "Sage",
+            "@sailor-name": "Sailor",
+            "@soldier-name": "Soldier",
+            "@urchin-name": "Urchin"
+        },
+
+        "charisma": {
+            "@cha-n1": "-1",
+            "@cha-0": "0",
+            "@cha-1": "1",
+            "@cha-2": "2",
+            "@cha-3": "3",
+            "@cha-class": "Based on class"
+        }
+    }
+}
