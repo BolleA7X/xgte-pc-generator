@@ -19,7 +19,8 @@ function Dropdown(props: DropdownProps) {
   let elements: JSX.Element[] = []
   for (let key of Object.keys(props.langObject)) {
     let value = props.langObject[key];
-    elements.push(<option value={value}>{value}</option>,)
+    let optionKey = "dropdown-" + key.slice(1)
+    elements.push(<option key={optionKey} value={value}>{value}</option>,)
   }
 
   return (
