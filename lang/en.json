@@ -1,6 +1,7 @@
 {
     "ui": {
         "races": {
+            "@random": "Random Race",
             "@dragonborn-name": "Dragonborn",
             "@dwarf-name": "Dwarf",
             "@elf-name": "Elf",
@@ -13,6 +14,7 @@
         },
 
         "classes": {
+            "@random": "Random Class",
             "@barbarian-name": "Barbarian",
             "@bard-name": "Bard",
             "@cleric-name": "Cleric",
@@ -28,6 +30,7 @@
         },
 
         "backgrounds": {
+            "@random": "Random Background",
             "@acolyte-name": "Acolyte",
             "@charlatan-name": "Charlatan",
             "@criminal_spy-name": "Criminal / Spy",
@@ -48,6 +51,7 @@
         },
 
         "charisma": {
+            "@random": "Random Charisma",
             "@cha-n1": "-1",
             "@cha-0": "0",
             "@cha-1": "1",

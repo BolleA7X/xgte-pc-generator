@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LanguageContext } from '../context'
 import './start.css'
 
@@ -17,15 +17,26 @@ type StartViewProps = {
 
 function Dropdown(props: DropdownProps) {
   let elements: JSX.Element[] = []
+  let firstItem = true
+  let defaultValue = ""
+
   for (let key of Object.keys(props.langObject)) {
-    let value = props.langObject[key];
+    let value = props.langObject[key]
     let optionKey = "dropdown-" + key.slice(1)
     elements.push(<option key={optionKey} value={value}>{value}</option>,)
+    if (firstItem) {
+      defaultValue = value
+      firstItem = false;
+    }
   }
+
+  useEffect(() => {
+    props.setter(defaultValue)
+  }, [firstItem])
 
   return (
     <>
-      <select defaultValue={"0"} onChange={(event) => props.setter(event.target.value)}>
+      <select onChange={(event) => props.setter(event.target.value)}>
         {elements}
       </select>
     </>
