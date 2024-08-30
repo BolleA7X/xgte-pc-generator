@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { LanguageContext } from '../context'
-import './start.css'
+import './view.css'
 
 type DropdownProps = {
   langObject: any;
@@ -53,7 +53,9 @@ function StartView(props: StartViewProps) {
       <Dropdown langObject={languageFile.ui.backgrounds} setter={props.setBackground}></Dropdown>
       <Dropdown langObject={languageFile.ui.charisma} setter={props.setCharisma}></Dropdown>
       <br></br>
-      <button onClick={() => props.startGeneration()}>{languageFile.ui.commands["@generate-button"]}</button>
+      <button id="generateButton" className="positiveButton" onClick={() => props.startGeneration()}>
+          {languageFile.ui.commands["@generate-button"]}
+      </button>
     </>
   )
 }

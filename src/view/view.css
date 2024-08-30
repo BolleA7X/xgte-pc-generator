@@ -1,0 +1,28 @@
+select {
+  margin: 10px;
+  width: 260px;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.positiveButton {
+  background-color: darkgreen;
+}
+
+#generateButton {
+  margin: 10px;
+  width: 210px;
+  height: 45px;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+}
+
+.tab {
+  width: 265px;
+  background-color: #242424;
+  text-align: left;
+}
