@@ -61,7 +61,13 @@
         },
 
         "commands": {
-            "@generate-button": "GENERATE"
+            "@generate-button": "GENERATE",
+            "@general-tab": "GENERAL",
+            "@origins-tab": "ORIGINS",
+            "@decisions-tab": "PERSONAL DECISIONS",
+            "@events-tab": "EVENTS",
+            "@save-button": "SAVE CHARACTER",
+            "@retry-button": "TRY AGAIN"
         }
     }
 }

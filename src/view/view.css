@@ -6,23 +6,32 @@ select {
   font-size: 25px;
 }
 
-.positiveButton {
-  background-color: darkgreen;
-}
-
 #generateButton {
   margin: 10px;
   width: 210px;
   height: 45px;
+  background-color: darkgreen;
 }
 
 .sidebar {
   position: absolute;
   left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #484848;
 }
 
 .tab {
-  width: 265px;
-  background-color: #242424;
+  width: 270px;
+  background-color: #484848;
   text-align: left;
+  border-radius: 0%;
+}
+
+#saveButton {
+  background-color: darkgreen;
+}
+
+#resetButton {
+  background-color: darkred;
 }

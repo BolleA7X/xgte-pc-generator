@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import StartView from './view/start'
+import CharacterView from './view/character'
 import { LanguageContext } from './context'
 
 // Languages
@@ -17,22 +18,20 @@ function App() {
   const [charisma, setCharisma] = useState("")
   const [generated, setGenerated] = useState(false)
 
-  const startGeneration = () => {
-    console.log(race, classs, background, charisma)
-    setGenerated(true)
-  }
-
   let languageFile = languageFiles["en"];
 
   let view: JSX.Element
   if (!generated) {
     view = <StartView 
       setRace={setRace} setClass={setClass} setBackground={setBackground} setCharisma={setCharisma} 
-      startGeneration={startGeneration}
+      startGeneration={() => setGenerated(true)}
     />
   }
-  else
-    view = <h1>Generated</h1>
+  else {
+    view = <CharacterView
+      reset={()=> setGenerated(false)}
+    />
+  }
 
   return (
     <LanguageContext.Provider value={languageFile}>
