@@ -7,10 +7,12 @@ function generateRandomInteger(min: number, max: number) {
 class Dice implements Action {
     private count: number;
     private faces: number;
+    private fixedBonus: number;
 
-    public constructor(count: number = 1, faces: number = 6) {
+    public constructor(count: number = 1, faces: number = 6, fixedBonus: number = 0) {
         this.count = count;
         this.faces = faces;
+        this.fixedBonus = fixedBonus;
     }
 
     public roll(modifier: number = 0): number {
@@ -18,7 +20,7 @@ class Dice implements Action {
         for (let i = 0; i < this.count; i++)
             sum += generateRandomInteger(1, this.faces);
         
-        return sum + modifier;
+        return sum + this.fixedBonus + modifier;
     }
 
     public do(modifier: number = 0): string {
