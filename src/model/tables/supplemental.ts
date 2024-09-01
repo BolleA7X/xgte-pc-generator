@@ -1,6 +1,5 @@
 import Dice from '../dice'
 import { Table } from '../table'
-import * as pd from './decisions'
 
 /**
  * This table was originally the 'life events by age' table.
@@ -32,6 +31,31 @@ export const alignment = new Table(
     ]
 )
 
+/**
+ * New custom table to randomly roll a background
+ */
+export const background = new Table(
+    new Dice(1, 100),
+    [
+        {limit:   6, text: "@background-0",  modifier: 0, actions: []},
+        {limit:  12, text: "@background-1",  modifier: 0, actions: []},
+        {limit:  18, text: "@background-2",  modifier: 0, actions: []},
+        {limit:  25, text: "@background-3",  modifier: 0, actions: []},
+        {limit:  31, text: "@background-4",  modifier: 0, actions: []},
+        {limit:  37, text: "@background-5",  modifier: 0, actions: []},
+        {limit:  43, text: "@background-6",  modifier: 0, actions: []},
+        {limit:  50, text: "@background-7",  modifier: 0, actions: []},
+        {limit:  56, text: "@background-8",  modifier: 0, actions: []},
+        {limit:  62, text: "@background-9",  modifier: 0, actions: []},
+        {limit:  68, text: "@background-10", modifier: 0, actions: []},
+        {limit:  75, text: "@background-11", modifier: 0, actions: []},
+        {limit:  81, text: "@background-12", modifier: 0, actions: []},
+        {limit:  87, text: "@background-13", modifier: 0, actions: []},
+        {limit:  93, text: "@background-14", modifier: 0, actions: []},
+        {limit: 100, text: "@background-15", modifier: 0, actions: []},
+    ]
+)
+
 export const causeOfDeath = new Table(
     new Dice(1, 12),
     [
@@ -52,18 +76,18 @@ export const causeOfDeath = new Table(
 export const classes = new Table(
     new Dice(1, 100),
     [
-        {limit:   7, text: "@class-0",  modifier: 0, actions: [pd.barbarian]},
-        {limit:  14, text: "@class-1",  modifier: 0, actions: [pd.bard]},
-        {limit:  29, text: "@class-2",  modifier: 0, actions: [pd.cleric]},
-        {limit:  36, text: "@class-3",  modifier: 0, actions: [pd.druid]},
-        {limit:  52, text: "@class-4",  modifier: 0, actions: [pd.fighter]},
-        {limit:  58, text: "@class-5",  modifier: 0, actions: [pd.monk]},
-        {limit:  64, text: "@class-6",  modifier: 0, actions: [pd.paladin]},
-        {limit:  70, text: "@class-7",  modifier: 0, actions: [pd.ranger]},
-        {limit:  84, text: "@class-8",  modifier: 0, actions: [pd.rogue]},
-        {limit:  89, text: "@class-9",  modifier: 0, actions: [pd.sorcerer]},
-        {limit:  94, text: "@class-10", modifier: 0, actions: [pd.warlock]},
-        {limit: 100, text: "@class-11", modifier: 0, actions: [pd.wizard]},
+        {limit:   7, text: "@class-0",  modifier: 0, actions: []},
+        {limit:  14, text: "@class-1",  modifier: 0, actions: []},
+        {limit:  29, text: "@class-2",  modifier: 0, actions: []},
+        {limit:  36, text: "@class-3",  modifier: 0, actions: []},
+        {limit:  52, text: "@class-4",  modifier: 0, actions: []},
+        {limit:  58, text: "@class-5",  modifier: 0, actions: []},
+        {limit:  64, text: "@class-6",  modifier: 0, actions: []},
+        {limit:  70, text: "@class-7",  modifier: 0, actions: []},
+        {limit:  84, text: "@class-8",  modifier: 0, actions: []},
+        {limit:  89, text: "@class-9",  modifier: 0, actions: []},
+        {limit:  94, text: "@class-10", modifier: 0, actions: []},
+        {limit: 100, text: "@class-11", modifier: 0, actions: []},
     ]
 )
 
