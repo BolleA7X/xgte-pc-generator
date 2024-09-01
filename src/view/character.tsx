@@ -3,31 +3,32 @@ import { LanguageContext } from '../context'
 import './view.css'
 
 type SidebarProps = {
+  selected: number;
+  setSelected: (id: React.SetStateAction<number>) => void;
   reset: () => void;
 }
 
 type CharacterViewProps = {
+  userSelection: Object;
   reset: () => void;
 }
 
 function SideBar(props: SidebarProps) {
-  const [selected, setSelected] = useState(0)
-
   const languageFile = useContext(LanguageContext);
 
   return (
     <>
       <div className="sidebar">
-        <button className="tab" style={selected === 0 ? {backgroundColor: "#242424"} : {}} onClick={() => setSelected(0)}>
+        <button className="tab" style={props.selected === 0 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(0)}>
           {languageFile.ui.commands["@general-tab"]}
         </button><br></br>
-        <button className="tab" style={selected === 1 ? {backgroundColor: "#242424"} : {}} onClick={() => setSelected(1)}>
+        <button className="tab" style={props.selected === 1 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(1)}>
           {languageFile.ui.commands["@origins-tab"]}
         </button><br></br>
-        <button className="tab" style={selected === 2 ? {backgroundColor: "#242424"} : {}} onClick={() => setSelected(2)}>
+        <button className="tab" style={props.selected === 2 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(2)}>
           {languageFile.ui.commands["@decisions-tab"]}
         </button><br></br>
-        <button className="tab" style={selected === 3 ? {backgroundColor: "#242424"} : {}} onClick={() => setSelected(3)}>
+        <button className="tab" style={props.selected === 3 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(3)}>
           {languageFile.ui.commands["@events-tab"]}
         </button><br></br>
         <br></br>
@@ -43,9 +44,19 @@ function SideBar(props: SidebarProps) {
 }
 
 function CharacterView(props: CharacterViewProps) {
+  const [selected, setSelected] = useState(0)
+  
+  let pages = [
+    <h1>Page 1</h1>,
+    <h1>Page 2</h1>,
+    <h1>Page 3</h1>,
+    <h1>Page 4</h1>,
+  ]
+
   return (
     <>
-      <SideBar reset={props.reset}></SideBar>
+      <SideBar selected={selected} setSelected={setSelected} reset={props.reset}></SideBar>
+      {pages[selected]}
     </>
   )
 }

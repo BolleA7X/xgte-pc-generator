@@ -29,6 +29,7 @@ function App() {
   }
   else {
     view = <CharacterView
+      userSelection={{"race": race, "class": classs, "background": background, "charisma": charisma}}
       reset={()=> setGenerated(false)}
     />
   }
