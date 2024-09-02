@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { LanguageContext } from '../context'
 import './view.css'
 
-type SidebarProps = {
+type NavbarProps = {
   selected: number;
   setSelected: (id: React.SetStateAction<number>) => void;
   reset: () => void;
@@ -13,29 +13,29 @@ type CharacterViewProps = {
   reset: () => void;
 }
 
-function SideBar(props: SidebarProps) {
+function Navbar(props: NavbarProps) {
   const languageFile = useContext(LanguageContext);
 
   return (
     <>
       <div className="sidebar">
-        <button className="tab" style={props.selected === 0 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(0)}>
+        <button className={props.selected === 0 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(0)}>
           {languageFile.ui.commands["@general-tab"]}
-        </button><br></br>
-        <button className="tab" style={props.selected === 1 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(1)}>
+        </button>
+        <button className={props.selected === 1 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(1)}>
           {languageFile.ui.commands["@origins-tab"]}
-        </button><br></br>
-        <button className="tab" style={props.selected === 2 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(2)}>
+        </button>
+        <button className={props.selected === 2 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(2)}>
           {languageFile.ui.commands["@decisions-tab"]}
-        </button><br></br>
-        <button className="tab" style={props.selected === 3 ? {backgroundColor: "#242424"} : {}} onClick={() => props.setSelected(3)}>
+        </button>
+        <button className={props.selected === 3 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(3)}>
           {languageFile.ui.commands["@events-tab"]}
-        </button><br></br>
+        </button>
         <br></br>
-        <button id="saveButton" className="tab">
+        <button id="saveButton" className="tab characterButton">
           {languageFile.ui.commands["@save-button"]}
-        </button><br></br>
-        <button id="resetButton" className="tab" onClick={() => props.reset()}>
+        </button>
+        <button id="resetButton" className="tab characterButton" onClick={() => props.reset()}>
           {languageFile.ui.commands["@retry-button"]}
         </button>
       </div>
@@ -55,7 +55,7 @@ function CharacterView(props: CharacterViewProps) {
 
   return (
     <>
-      <SideBar selected={selected} setSelected={setSelected} reset={props.reset}></SideBar>
+      <Navbar selected={selected} setSelected={setSelected} reset={props.reset}></Navbar>
       {pages[selected]}
     </>
   )

@@ -14,18 +14,45 @@ select {
 }
 
 .sidebar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #484848;
+  /* Positioning */
+  background-color: whitesmoke;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  /* Content centering */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+
+  /* Rounded border */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: .3%;
 }
 
 .tab {
-  width: 270px;
-  background-color: #484848;
-  text-align: left;
-  border-radius: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.unselectedTab {
+  background-color: transparent;
+  color: black;
+}
+
+.selectedTab {
+  background-color: dimgrey;
+  color: white;
+}
+
+.characterButton {
+  color: white;
 }
 
 #saveButton {
