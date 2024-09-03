@@ -15,7 +15,7 @@ select {
 
 .sidebar {
   /* Positioning */
-  background-color: whitesmoke;
+  background-color: #f2f2f2;
   position: fixed;
   top: 5%;
   left: 50%;
