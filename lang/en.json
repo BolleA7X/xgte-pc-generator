@@ -68,6 +68,16 @@
             "@events-tab": "EVENTS",
             "@save-button": "SAVE CHARACTER",
             "@retry-button": "TRY AGAIN"
-        }
+        },
+
+        "pages": [
+            {
+                "@title": "General Information",
+                "@race-section": "RACE",
+                "@class-section": "CLASS",
+                "@background-section": "BACKGROUND",
+                "@charisma-section": "CHARISMA MODIFIER"
+            }
+        ]
     }
 }

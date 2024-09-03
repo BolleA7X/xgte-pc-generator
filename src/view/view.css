@@ -62,3 +62,14 @@ select {
 #resetButton {
   background-color: darkred;
 }
+
+.page {
+  position: fixed;
+  top: 15%;
+  left: 2%;
+  text-align: left;
+}
+
+.section {
+  margin-top: 60px;
+}

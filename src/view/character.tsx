@@ -8,8 +8,20 @@ type NavbarProps = {
   reset: () => void;
 }
 
+type GeneralPageProps = {
+  race: string;
+  class: string;
+  background: string;
+  charisma: number;
+}
+
 type CharacterViewProps = {
-  userSelection: Object;
+  userSelection: {
+    race: string;
+    class: string;
+    background: string;
+    charisma: string;
+  };
   reset: () => void;
 }
 
@@ -43,11 +55,42 @@ function Navbar(props: NavbarProps) {
   )
 }
 
+function GeneralPage(props: GeneralPageProps) {
+  const languageFile = useContext(LanguageContext);
+
+  return (
+    <div className="page">
+      <h1>{languageFile.ui.pages[0]["@title"]}</h1>
+      <div className="section">
+        <h2>{languageFile.ui.pages[0]["@race-section"]}</h2>
+        <p>{props.race}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[0]["@class-section"]}</h2>
+        <p>{props.class}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[0]["@background-section"]}</h2>
+        <p>{props.background}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[0]["@charisma-section"]}</h2>
+        <p>{props.charisma}</p>
+      </div>
+    </div>
+  )
+}
+
 function CharacterView(props: CharacterViewProps) {
   const [selected, setSelected] = useState(0)
   
   let pages = [
-    <h1>Page 1</h1>,
+    <GeneralPage
+      race={props.userSelection.race}
+      class={props.userSelection.class}
+      background={props.userSelection.background}
+      charisma={Number(props.userSelection.charisma)}
+    />,
     <h1>Page 2</h1>,
     <h1>Page 3</h1>,
     <h1>Page 4</h1>,
