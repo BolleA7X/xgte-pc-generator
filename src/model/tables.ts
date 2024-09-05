@@ -148,16 +148,15 @@ export const tieflingParents = new Table(
 export const race = new Table(
     new Dice(1, 100),
     [
-        {limit:  40, text: "@race-0", modifier: 0, actions: []},
-        {limit:  50, text: "@race-1", modifier: 0, actions: []},
-        {limit:  60, text: "@race-2", modifier: 0, actions: []},
-        {limit:  70, text: "@race-3", modifier: 0, actions: []},
-        {limit:  75, text: "@race-4", modifier: 0, actions: []},
-        {limit:  80, text: "@race-5", modifier: 0, actions: []},
-        {limit:  85, text: "@race-6", modifier: 0, actions: [halfelfParents]},
-        {limit:  90, text: "@race-7", modifier: 0, actions: [halforcParents]},
-        {limit:  95, text: "@race-8", modifier: 0, actions: [tieflingParents]},
-        {limit: 100, text: "@race-9", modifier: 0, actions: []},
+        {limit:  12, text: "@race-0", modifier: 0, actions: []},
+        {limit:  23, text: "@race-1", modifier: 0, actions: []},
+        {limit:  34, text: "@race-2", modifier: 0, actions: []},
+        {limit:  45, text: "@race-3", modifier: 0, actions: []},
+        {limit:  56, text: "@race-4", modifier: 0, actions: []},
+        {limit:  67, text: "@race-5", modifier: 0, actions: []},
+        {limit:  78, text: "@race-6", modifier: 0, actions: [halfelfParents]},
+        {limit:  89, text: "@race-7", modifier: 0, actions: [halforcParents]},
+        {limit: 100, text: "@race-8", modifier: 0, actions: [tieflingParents]},
     ]
 )
 
