@@ -79,5 +79,56 @@
                 "@charisma-section": "CHARISMA MODIFIER"
             }
         ]
+    },
+
+    "tables": {
+        "supplemental": {
+            "race": {
+                "@race-0": "Human",
+                "@race-1": "Dwarf",
+                "@race-2": "Elf",
+                "@race-3": "Halfling",
+                "@race-4": "Dragonborn",
+                "@race-5": "Gnome",
+                "@race-6": "Half-Elf",
+                "@race-7": "Half-Orc",
+                "@race-8": "Tiefling"
+            },
+
+            "class": {
+                "@class-0": "Barbarian",
+                "@class-1": "Bard",
+                "@class-2": "Cleric",
+                "@class-3": "Druid",
+                "@class-4": "Fighter",
+                "@class-5": "Monk",
+                "@class-6": "Paladin",
+                "@class-7": "Ranger",
+                "@class-8": "Rogue",
+                "@class-9": "Sorcerer",
+                "@class-10": "Warlock",
+                "@class-11": "Wizard"
+            },
+
+            "background": {
+                "@background-0": "Acolyte",
+                "@background-1": "Charlatan",
+                "@background-2": "Criminal / Spy",
+                "@background-3": "Entertainer",
+                "@background-4": "Folk Hero",
+                "@background-5": "Gladiator",
+                "@background-6": "Guild Artisan",
+                "@background-7": "Haunted One",
+                "@background-8": "Hermit",
+                "@background-9": "Knight",
+                "@background-10": "Noble",
+                "@background-11": "Outlander",
+                "@background-12": "Pirate",
+                "@background-13": "Sage",
+                "@background-14": "Sailor",
+                "@background-15": "Soldier",
+                "@background-16": "Urchin"
+            }
+        }
     }
 }

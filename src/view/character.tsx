@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { LanguageContext } from '../context'
+import { Character } from '../model/character'
 import './view.css'
 
 type NavbarProps = {
@@ -16,12 +17,7 @@ type GeneralPageProps = {
 }
 
 type CharacterViewProps = {
-  userSelection: {
-    race: string;
-    class: string;
-    background: string;
-    charisma: string;
-  };
+  character: Character;
   reset: () => void;
 }
 
@@ -86,10 +82,10 @@ function CharacterView(props: CharacterViewProps) {
   
   let pages = [
     <GeneralPage
-      race={props.userSelection.race}
-      class={props.userSelection.class}
-      background={props.userSelection.background}
-      charisma={Number(props.userSelection.charisma)}
+      race={props.character.race}
+      class={props.character.class}
+      background={props.character.background}
+      charisma={Number(props.character.charisma)}
     />,
     <h1>Page 2</h1>,
     <h1>Page 3</h1>,

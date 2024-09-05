@@ -3,6 +3,7 @@ import './App.css'
 import StartView from './view/start'
 import CharacterView from './view/character'
 import { LanguageContext } from './context'
+import { CharacterBuilder } from './model/character'
 
 // Languages
 import stringsEN from '../lang/en.json'
@@ -28,8 +29,17 @@ function App() {
     />
   }
   else {
+    let cb = new CharacterBuilder(languageFile, {
+      race: race,
+      class: classs,
+      background: background,
+      charisma: charisma
+    })
+
+    let character = cb.make()
+
     view = <CharacterView
-      userSelection={{"race": race, "class": classs, "background": background, "charisma": charisma}}
+      character={character}
       reset={()=> setGenerated(false)}
     />
   }
