@@ -20,10 +20,9 @@ export class Table implements Action {
     public roll(modifier: number = 0): TableRow {
         let roll: number = this.dice.roll(modifier);
         for (let i = 0; i < this.rows.length; i++) {
-            let row = this.rows[i];console.log("Rolled: ", roll, "; Table index: ", i)
+            let row = this.rows[i]
             if (roll <= row.limit)
                 return row;
-            roll -= row.limit;
         }
         throw new RangeError("Table rows overflow");
     }
@@ -39,7 +38,6 @@ export class Table implements Action {
         let res = row.text
         for (let action of row.actions)
             res += "\n" + action.do(modifier)
-        console.log(row, res)
         return res
     }
 }
