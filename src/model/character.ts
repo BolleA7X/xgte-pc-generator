@@ -15,6 +15,11 @@ export class Character {
     public charisma: number = 0;
 }
 
+function getIndexOfTable(tableDict: any, target: string): number {
+    let values = Object.keys(tableDict).map<any>((key) => tableDict[key])
+    return values.indexOf(target)
+}
+
 export class CharacterBuilder {
     private languageFile: any;
     private userSelection: UserSelection;
@@ -28,9 +33,7 @@ export class CharacterBuilder {
 
     private setRace() {
         // Check if race was selected
-        let racesDict = this.languageFile.tables.supplemental.race
-        let races = Object.keys(racesDict).map<any>((key) => racesDict[key])
-        let raceIndex = races.indexOf(this.userSelection.race)
+        let raceIndex = getIndexOfTable(this.languageFile.tables.supplemental.race, this.userSelection.race)
         let randomSelection: boolean = raceIndex === -1
 
         let raceEntry
@@ -46,9 +49,7 @@ export class CharacterBuilder {
 
     private setClass() {
         // Check if class was selected
-        let classesDict = this.languageFile.tables.supplemental.class
-        let classes = Object.keys(classesDict).map<any>((key) => classesDict[key])
-        let classIndex = classes.indexOf(this.userSelection.class)
+        let classIndex = getIndexOfTable(this.languageFile.tables.supplemental.class, this.userSelection.class)
         let randomSelection: boolean = classIndex === -1
 
         let classEntry
@@ -64,9 +65,7 @@ export class CharacterBuilder {
 
     private setBackground() {
         // Check if background was selected
-        let backgroundsDict = this.languageFile.tables.supplemental.background
-        let backgrounds = Object.keys(backgroundsDict).map<any>((key) => backgroundsDict[key])
-        let backgroundIndex = backgrounds.indexOf(this.userSelection.background)
+        let backgroundIndex = getIndexOfTable(this.languageFile.tables.supplemental.background, this.userSelection.background)
         let randomSelection: boolean = backgroundIndex === -1
 
         let backgroundEntry
@@ -82,9 +81,7 @@ export class CharacterBuilder {
 
     private setCharisma() {
         // Check if charisma was selected
-        let charismaDict = this.languageFile.ui.charisma
-        let charismaScores = Object.keys(charismaDict).map<any>((key) => charismaDict[key])
-        let charismaIndex = charismaScores.indexOf(this.userSelection.charisma)
+        let charismaIndex = getIndexOfTable(this.languageFile.ui.charisma, this.userSelection.charisma)
         let randomSelection: boolean = charismaIndex <= 0
         let basedOnClass: boolean = charismaIndex > 5
 
@@ -98,7 +95,7 @@ export class CharacterBuilder {
             const scoreByClass = [-1, 3, 1, 0, 0, -1, 2, 0, 1, 3, 3, 0]
             charisma = scoreByClass[classIndex]
         } else {
-            charisma = Number(charismaScores[charismaIndex])
+            charisma = charismaIndex - 2
         }
 
         this.character.charisma = charisma
