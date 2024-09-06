@@ -85,8 +85,16 @@
                 "@birthplace-section": "BIRTHPLACE",
                 "@siblings-section": "SIBLINGS",
                 "@family-friends-section": "FAMILY AND FRIENDS",
+                "@parents-know-label": "Familiarity: ",
+                "@parents-mixed-label": "Mixed parents: ",
                 "@siblings-num-label": "Number of siblings: ",
-                "@siblings-order-label": "Order: "
+                "@siblings-order-label": "Birth order: ",
+                "@family-raised-label": "Raised by: ",
+                "@family-absent-label": "Absent parent: ",
+                "@family-death-label": "Parent's cause of death: ",
+                "@family-lifestyle-label": "Family lifestyle: ",
+                "@family-home-label": "Childhood home: ",
+                "@family-memories-label": "Childhood memories: "
             }
         ]
     },

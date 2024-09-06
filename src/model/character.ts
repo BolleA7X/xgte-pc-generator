@@ -14,10 +14,17 @@ export class Character {
     public background: string = ""
     public charisma: number = 0
 
-    public parents: string = ""
+    public parentsFamiliarity: string = ""
+    public mixedParents: string = ""
     public birthplace: string = ""
-    public siblings: string = ""
+    public siblingsNumber: string = ""
+    public birthOrder: string = ""
     public family: string = ""
+    public absentParent: string = ""
+    public parentDeath: string = ""
+    public lifestyle: string = ""
+    public childHome: string = ""
+    public childMemories: string = ""
 }
 
 function getIndexOfTable(tableDict: any, target: string): number {
@@ -110,13 +117,13 @@ export class CharacterBuilder {
         const lang = this.languageFile.tables.origins
 
         // Parents
-        this.character.parents = lang.parents[tables.parents.roll().text]
+        this.character.parentsFamiliarity = lang.parents[tables.parents.roll().text]
 
         // Mixed parents
         let raceIndex = getIndexOfTable(this.languageFile.tables.supplemental.race, this.character.race)
         let raceEntry = tables.race.pick(raceIndex)
         if (raceEntry.actions.length === 1)
-            this.character.parents += "\n" + lang.mixedparents[raceEntry.actions[0].do(0)]
+            this.character.mixedParents = lang.mixedparents[raceEntry.actions[0].do(0)]
 
         // Birthplace
         this.character.birthplace = lang.birthplace[tables.birthplace.roll().text]
@@ -125,24 +132,24 @@ export class CharacterBuilder {
         let siblingsNumberEntry = tables.siblingsNumber.roll()
         let siblingsRoll = siblingsNumberEntry.text
         let siblingsNumber = Number(siblingsNumberEntry.actions[0].do(0))
-        this.character.siblings = this.languageFile.ui.pages[1]["@siblings-num-label"] + siblingsNumber.toString()
+        this.character.siblingsNumber = siblingsNumber.toString()
         if (siblingsNumber > 0)
         {
-            this.character.siblings += " (" + siblingsRoll + ")"
+            this.character.siblingsNumber += " (" + siblingsRoll + ")"
             let birthOrder = lang.birthorder[tables.birthOrder.roll().text]
-            this.character.siblings += "\n" + this.languageFile.ui.pages[1]["@siblings-order-label"] + birthOrder
+            this.character.birthOrder = birthOrder
         }
 
         // Family and friends
         this.character.family = lang.family[tables.family.roll().text]
         let absentParentEntry = tables.absentParent.roll()
-        this.character.family += "\n" + lang.absentparent[absentParentEntry.text]
+        this.character.absentParent = lang.absentparent[absentParentEntry.text]
         if (absentParentEntry.actions.length === 1)
-            this.character.family += "\n" + this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)]
+            this.character.parentDeath = this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)]
         let lifestyleEntry = tables.familyLifestyle.roll()
-        this.character.family += "\n" + lang.lifestyle[lifestyleEntry.text]
-        this.character.family += "\n" + lang.home[tables.childhoodHome.roll(lifestyleEntry.modifier).text]
-        this.character.family += "\n" + lang.memories[tables.childhoodMemories.roll(this.character.charisma).text]
+        this.character.lifestyle = lang.lifestyle[lifestyleEntry.text]
+        this.character.childHome = lang.home[tables.childhoodHome.roll(lifestyleEntry.modifier).text]
+        this.character.childMemories = lang.memories[tables.childhoodMemories.roll(this.character.charisma).text]
     }
 
     public make() {
