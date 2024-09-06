@@ -77,11 +77,128 @@
                 "@class-section": "CLASS",
                 "@background-section": "BACKGROUND",
                 "@charisma-section": "CHARISMA MODIFIER"
+            },
+
+            {
+                "@title": "Origins",
+                "@parents-section": "PARENTS",
+                "@birthplace-section": "BIRTHPLACE",
+                "@siblings-section": "SIBLINGS",
+                "@family-friends-section": "FAMILY AND FRIENDS",
+                "@siblings-num-label": "Number of siblings: ",
+                "@siblings-order-label": "Order: "
             }
         ]
     },
 
     "tables": {
+        "origins": {
+            "parents": {
+                "@parents-0": "You know who your parents are or were.",
+                "@parents-1": "You do not know who your parents were."
+            },
+
+            "mixedparents": {
+                "@halfelfparents-0": "One parent was an elf and the other was a human.",
+                "@halfelfparents-1": "One parent was an elf and the other was a half-elf.",
+                "@halfelfparents-2": "One parent was a human and the other was a half-elf.",
+                "@halfelfparents-3": "Both parents were half-elves.",
+                "@halforcparents-0": "One parent was an orc and the other was a human.",
+                "@halforcparents-1": "One parent was an orc and the other was a half-orc.",
+                "@halforcparents-2": "One parent was a human and the other was a half-orc.",
+                "@halforcparents-3": "Both parents were half-orcs.",
+                "@tieflingparents-0": "Both parents were humans, their infernal heritage dormant until you came along.",
+                "@tieflingparents-1": "One parent was a tiefling and the other was a human.",
+                "@tieflingparents-2": "One parent was a tiefling and the other was a devil.",
+                "@tieflingparents-3": "One parent was a human and the other was a devil."
+            },
+
+            "birthplace": {
+                "@birthplace-0": "Home",
+                "@birthplace-1": "Home of a family friend",
+                "@birthplace-2": "Home of a healer or midwife",
+                "@birthplace-3": "Carriage, cart, or wagon",
+                "@birthplace-4": "Barn, shed, or other outbuilding",
+                "@birthplace-5": "Cave",
+                "@birthplace-6": "Field",
+                "@birthplace-7": "Forest",
+                "@birthplace-8": "Temple",
+                "@birthplace-9": "Battlefield",
+                "@birthplace-10": "Alley or street",
+                "@birthplace-11": "Brothel, tavern, or inn",
+                "@birthplace-12": "Castle, keep, tower, or palace",
+                "@birthplace-13": "Sewer or rubbish heap",
+                "@birthplace-14": "Among people of a different race",
+                "@birthplace-15": "On board a boat or a ship",
+                "@birthplace-16": "In a prison or in the headquarters of a secret organization",
+                "@birthplace-17": "In a sage’s laboratory",
+                "@birthplace-18": "In the Feywild",
+                "@birthplace-19": "In the Shadowfell",
+                "@birthplace-20": "On the Astral Plane or the Ethereal Plane",
+                "@birthplace-21": "On an Inner Plane of your choice",
+                "@birthplace-22": "On an Outer Plane of your choice"
+            },
+
+            "birthorder": {
+                "@birthorder-0": "Twin, triplet, or quadruplet",
+                "@birthorder-1": "Older",
+                "@birthorder-2": "Younger"
+            },
+
+            "family": {
+                "@family-0": "None",
+                "@family-1": "Institution, such as an asylum",
+                "@family-2": "Temple",
+                "@family-3": "Orphanage",
+                "@family-4": "Guardian",
+                "@family-5": "Paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan",
+                "@family-6": "Paternal or maternal grandparent(s)",
+                "@family-7": "Adoptive family (same or different race)",
+                "@family-8": "Single father or stepfather",
+                "@family-9": "Single mother or stepmother",
+                "@family-10": "Mother and father"
+            },
+
+            "absentparent": {
+                "@absentparent-0": "Your parent died (roll on the Cause of Death supplemental table).",
+                "@absentparent-1": "Your parent was imprisoned, enslaved, or otherwise taken away.",
+                "@absentparent-2": "Your parent abandoned you.",
+                "@absentparent-3": "Your parent disappeared to an unknown fate."
+            },
+
+            "lifestyle": {
+                "@lifestyle-0": "Wretched",
+                "@lifestyle-1": "Squalid",
+                "@lifestyle-2": "Poor",
+                "@lifestyle-3": "Modest",
+                "@lifestyle-4": "Comfortable",
+                "@lifestyle-5": "Wealthy",
+                "@lifestyle-6": "Aristocratic"
+            },
+
+            "home": {
+                "@home-0": "On the streets",
+                "@home-1": "Rundown shack",
+                "@home-2": "No permanent residence; you moved around a lot",
+                "@home-3": "Encampment or village in the wilderness",
+                "@home-4": "Apartment in a rundown neighborhood",
+                "@home-5": "Small house",
+                "@home-6": "Large house",
+                "@home-7": "Mansion",
+                "@home-8": "Palace or castle"
+            },
+
+            "memories": {
+                "@memories-0": "I am still haunted by my childhood, when I was treated badly by my peers.",
+                "@memories-1": "I spent most of my childhood alone, with no close friends.",
+                "@memories-2": "Others saw me as being different or strange, and so I had few companions.",
+                "@memories-3": "I had a few close friends and lived an ordinary childhood.",
+                "@memories-4": "I had several friends, and my childhood was generally a happy one.",
+                "@memories-5": "I always found it easy to make friends, and I loved being around people.",
+                "@memories-6": "Everyone knew who I was, and I had friends everywhere I went."
+            }
+        },
+
         "supplemental": {
             "race": {
                 "@race-0": "Human",
@@ -128,6 +245,20 @@
                 "@background-14": "Sailor",
                 "@background-15": "Soldier",
                 "@background-16": "Urchin"
+            },
+
+            "causeofdeath": {
+                "@causeofdeath-0": "Unknown",
+                "@causeofdeath-1": "Murdered",
+                "@causeofdeath-2": "Killed in battle",
+                "@causeofdeath-3": "Accident related to class or occupation",
+                "@causeofdeath-4": "Accident unrelated to class or occupation",
+                "@causeofdeath-5": "Natural causes, such as disease or old age",
+                "@causeofdeath-6": "Apparent suicide",
+                "@causeofdeath-7": "Torn apart by an animal or a natural disaster",
+                "@causeofdeath-8": "Consumed by a monster",
+                "@causeofdeath-9": "Executed for a crime or tortured to death",
+                "@causeofdeath-10": "Bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg"
             }
         }
     }

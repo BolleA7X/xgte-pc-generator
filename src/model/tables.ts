@@ -224,11 +224,11 @@ export const birthplace = new Table(
 export const siblingsNumber = new Table(
     new Dice(1, 10),
     [
-        {limit:  2, text: "@siblingsnum-0", modifier: 0, actions: []},
-        {limit:  4, text: "@siblingsnum-1", modifier: 0, actions: []},
-        {limit:  6, text: "@siblingsnum-2", modifier: 0, actions: []},
-        {limit:  8, text: "@siblingsnum-3", modifier: 0, actions: []},
-        {limit: 10, text: "@siblingsnum-4", modifier: 0, actions: []},
+        {limit:  2, text: "0",       modifier: 0, actions: [new Dice(0, 0)]},
+        {limit:  4, text: "1d3",     modifier: 0, actions: [new Dice(1, 3)]},
+        {limit:  6, text: "1d4 + 1", modifier: 0, actions: [new Dice(1, 4, 1)]},
+        {limit:  8, text: "1d6 + 2", modifier: 0, actions: [new Dice(1, 6, 2)]},
+        {limit: 10, text: "1d8 + 3", modifier: 0, actions: [new Dice(1, 8, 3)]},
     ]
 )
 

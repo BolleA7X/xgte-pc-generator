@@ -9,12 +9,7 @@ type NavbarProps = {
   reset: () => void;
 }
 
-type GeneralPageProps = {
-  race: string;
-  class: string;
-  background: string;
-  charisma: number;
-}
+type PageProps = { character: Character }
 
 type CharacterViewProps = {
   character: Character;
@@ -51,7 +46,7 @@ function Navbar(props: NavbarProps) {
   )
 }
 
-function GeneralPage(props: GeneralPageProps) {
+function GeneralPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
   return (
@@ -59,19 +54,45 @@ function GeneralPage(props: GeneralPageProps) {
       <h1>{languageFile.ui.pages[0]["@title"]}</h1>
       <div className="section">
         <h2>{languageFile.ui.pages[0]["@race-section"]}</h2>
-        <p>{props.race}</p>
+        <p>{props.character.race}</p>
       </div>
       <div className="section">
         <h2>{languageFile.ui.pages[0]["@class-section"]}</h2>
-        <p>{props.class}</p>
+        <p>{props.character.class}</p>
       </div>
       <div className="section">
         <h2>{languageFile.ui.pages[0]["@background-section"]}</h2>
-        <p>{props.background}</p>
+        <p>{props.character.background}</p>
       </div>
       <div className="section">
         <h2>{languageFile.ui.pages[0]["@charisma-section"]}</h2>
-        <p>{props.charisma}</p>
+        <p>{props.character.charisma}</p>
+      </div>
+    </div>
+  )
+}
+
+function OriginsPage(props: PageProps) {
+  const languageFile = useContext(LanguageContext);
+
+  return (
+    <div className="page">
+      <h1>{languageFile.ui.pages[1]["@title"]}</h1>
+      <div className="section">
+        <h2>{languageFile.ui.pages[1]["@parents-section"]}</h2>
+        <p>{props.character.parents}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[1]["@birthplace-section"]}</h2>
+        <p>{props.character.birthplace}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[1]["@siblings-section"]}</h2>
+        <p>{props.character.siblings}</p>
+      </div>
+      <div className="section">
+        <h2>{languageFile.ui.pages[1]["@family-friends-section"]}</h2>
+        <p>{props.character.family}</p>
       </div>
     </div>
   )
@@ -81,13 +102,8 @@ function CharacterView(props: CharacterViewProps) {
   const [selected, setSelected] = useState(0)
   
   let pages = [
-    <GeneralPage
-      race={props.character.race}
-      class={props.character.class}
-      background={props.character.background}
-      charisma={Number(props.character.charisma)}
-    />,
-    <h1>Page 2</h1>,
+    <GeneralPage character={props.character} />,
+    <OriginsPage character={props.character} />,
     <h1>Page 3</h1>,
     <h1>Page 4</h1>,
   ]

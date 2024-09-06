@@ -68,8 +68,16 @@ select {
   top: 15%;
   left: 2%;
   text-align: left;
+  width: 100%;
+  height: 80%;
+  overflow: scroll;
 }
 
 .section {
   margin-top: 60px;
+}
+
+.section p {
+  white-space: pre;
+  font-size: large;
 }
