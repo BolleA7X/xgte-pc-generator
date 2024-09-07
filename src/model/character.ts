@@ -22,8 +22,8 @@ export class Character {
     public siblingsNumber: string = ""
     public birthOrder: string = ""
     public family: string = ""
-    public absentParent: string = ""
-    public parentDeath: string = ""
+    public absentParents: string[] = ["", ""]
+    public parentDeath: string[] = ["", ""]
     public lifestyle: string = ""
     public childHome: string = ""
     public childMemories: string = ""
@@ -146,10 +146,13 @@ export class CharacterBuilder {
 
         // Family and friends
         this.character.family = lang.family[tables.family.roll().text]
-        let absentParentEntry = tables.absentParent.roll()
-        this.character.absentParent = lang.absentparent[absentParentEntry.text]
-        if (absentParentEntry.actions.length === 1)
-            this.character.parentDeath = this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)]
+        for (let i = 0; i < 2; i++)
+        {
+            let absentParentEntry = tables.absentParent.roll()
+            this.character.absentParents[i] = lang.absentparent[absentParentEntry.text]
+            if (absentParentEntry.actions.length === 1)
+                this.character.parentDeath[i] = this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)]
+        }
         let lifestyleEntry = tables.familyLifestyle.roll()
         this.character.lifestyle = lang.lifestyle[lifestyleEntry.text]
         this.character.childHome = lang.home[tables.childhoodHome.roll(lifestyleEntry.modifier).text]

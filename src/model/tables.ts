@@ -609,13 +609,17 @@ export const family = new Table(
     ]
 )
 
+/**
+ * Edited to include a "No" option
+ */
 export const absentParent = new Table(
-    new Dice(1, 4),
+    new Dice(1, 100),
     [
-        {limit: 1, text: "@absentparent-0", modifier: 0, actions: [causeOfDeath]},
-        {limit: 2, text: "@absentparent-1", modifier: 0, actions: []},
-        {limit: 3, text: "@absentparent-2", modifier: 0, actions: []},
-        {limit: 4, text: "@absentparent-3", modifier: 0, actions: []},
+        {limit:  20, text: "@absentparent-0", modifier: 0, actions: [causeOfDeath]},
+        {limit:  30, text: "@absentparent-1", modifier: 0, actions: []},
+        {limit:  40, text: "@absentparent-2", modifier: 0, actions: []},
+        {limit:  50, text: "@absentparent-3", modifier: 0, actions: []},
+        {limit: 100, text: "@absentparent-4", modifier: 0, actions: []},
     ]
 )
 

@@ -135,8 +135,10 @@ function OriginsPage(props: PageProps) {
         title={languageFile.ui.pages[1]["@family-friends-section"]}
         subsections={[
           {label: languageFile.ui.pages[1]["@family-raised-label"], text: props.character.family},
-          {label: languageFile.ui.pages[1]["@family-absent-label"], text: props.character.absentParent},
-          {label: languageFile.ui.pages[1]["@family-death-label"], text: props.character.parentDeath},
+          {label: languageFile.ui.pages[1]["@family-absent1-label"], text: props.character.absentParents[0]},
+          {label: languageFile.ui.pages[1]["@family-death-label"], text: props.character.parentDeath[0]},
+          {label: languageFile.ui.pages[1]["@family-absent2-label"], text: props.character.absentParents[1]},
+          {label: languageFile.ui.pages[1]["@family-death-label"], text: props.character.parentDeath[1]},
           {label: languageFile.ui.pages[1]["@family-lifestyle-label"], text: props.character.lifestyle},
           {label: languageFile.ui.pages[1]["@family-home-label"], text: props.character.childHome},
           {label: languageFile.ui.pages[1]["@family-memories-label"], text: props.character.childMemories},

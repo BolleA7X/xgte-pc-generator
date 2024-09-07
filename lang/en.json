@@ -91,7 +91,8 @@
                 "@siblings-num-label": "Number of siblings: ",
                 "@siblings-order-label": "Birth order: ",
                 "@family-raised-label": "Raised by: ",
-                "@family-absent-label": "Absent parent: ",
+                "@family-absent1-label": "Absent parent 1: ",
+                "@family-absent2-label": "Absent parent 2: ",
                 "@family-death-label": "Parent's cause of death: ",
                 "@family-lifestyle-label": "Family lifestyle: ",
                 "@family-home-label": "Childhood home: ",
@@ -172,7 +173,8 @@
                 "@absentparent-0": "Your parent died (roll on the Cause of Death supplemental table).",
                 "@absentparent-1": "Your parent was imprisoned, enslaved, or otherwise taken away.",
                 "@absentparent-2": "Your parent abandoned you.",
-                "@absentparent-3": "Your parent disappeared to an unknown fate."
+                "@absentparent-3": "Your parent disappeared to an unknown fate.",
+                "@absentparent-4": "No."
             },
 
             "lifestyle": {
