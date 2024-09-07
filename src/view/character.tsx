@@ -87,11 +87,17 @@ function GeneralPage(props: PageProps) {
       />
       <PageSection 
         title={languageFile.ui.pages[0]["@class-section"]}
-        subsections={[{label: "", text: props.character.class}]}
+        subsections={[
+          {label: "", text: props.character.class},
+          {label: languageFile.ui.pages[0]["@class-reason-label"], text: props.character.classReason}
+        ]}
       />
       <PageSection 
         title={languageFile.ui.pages[0]["@background-section"]}
-        subsections={[{label: "", text: props.character.background}]}
+        subsections={[
+          {label: "", text: props.character.background},
+          {label: languageFile.ui.pages[0]["@background-reason-label"], text: props.character.bgReason}
+        ]}
       />
       <PageSection 
         title={languageFile.ui.pages[0]["@charisma-section"]}

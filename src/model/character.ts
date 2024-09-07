@@ -11,7 +11,9 @@ type UserSelection = {
 export class Character {
     public race: string = ""
     public class: string = ""
+    public classReason: string = ""
     public background: string = ""
+    public bgReason: string = ""
     public charisma: number = 0
 
     public parentsFamiliarity: string = ""
@@ -73,6 +75,7 @@ export class CharacterBuilder {
         }
 
         this.character.class = this.languageFile.tables.supplemental.class[classEntry.text]
+        this.character.classReason = this.languageFile.tables.decisions.class[classEntry.actions[0].do(0)]
     }
 
     private setBackground() {
@@ -89,6 +92,7 @@ export class CharacterBuilder {
         }
 
         this.character.background = this.languageFile.tables.supplemental.background[backgroundEntry.text]
+        this.character.bgReason = this.languageFile.tables.decisions.background[backgroundEntry.actions[0].do(0)]
     }
 
     private setCharisma() {
