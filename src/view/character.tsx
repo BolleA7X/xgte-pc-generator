@@ -81,6 +81,10 @@ function GeneralPage(props: PageProps) {
   return (
     <div className="page">
       <h1>{languageFile.ui.pages[0]["@title"]}</h1>
+      <PageSection
+        title={languageFile.ui.pages[0]["@age-section"]}
+        subsections={[{label: "", text: props.character.age}]}
+      />
       <PageSection 
         title={languageFile.ui.pages[0]["@race-section"]}
         subsections={[{label: "", text: props.character.race}]}
@@ -148,6 +152,28 @@ function OriginsPage(props: PageProps) {
   )
 }
 
+function EventsPage(props: PageProps) {
+  const languageFile = useContext(LanguageContext);
+
+  let events = []
+  for (let i = 0; i < props.character.events.length; i++) {
+    let title = languageFile.ui.pages[3]["@event-label"] + (i+1).toString()
+    events.push(
+      <PageSection
+        title={title}
+        subsections={[{label: "", text: props.character.events[i]}]}
+      />
+    )
+  }
+  
+  return (
+    <div className="page">
+      <h1>{languageFile.ui.pages[3]["@title"]}</h1>
+      {events}
+    </div>
+  )
+}
+
 function CharacterView(props: CharacterViewProps) {
   const [selected, setSelected] = useState(0)
   
@@ -155,7 +181,7 @@ function CharacterView(props: CharacterViewProps) {
     <GeneralPage character={props.character} />,
     <OriginsPage character={props.character} />,
     <h1>Page 3</h1>,
-    <h1>Page 4</h1>,
+    <EventsPage character={props.character} />,
   ]
 
   return (

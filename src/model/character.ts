@@ -9,6 +9,7 @@ type UserSelection = {
 }
 
 export class Character {
+    public age: string = ""
     public race: string = ""
     public class: string = ""
     public classReason: string = ""
@@ -27,11 +28,29 @@ export class Character {
     public lifestyle: string = ""
     public childHome: string = ""
     public childMemories: string = ""
+
+    public events: string[] = []
 }
 
 function getIndexOfTable(tableDict: any, target: string): number {
     let values = Object.keys(tableDict).map<any>((key) => tableDict[key])
     return values.indexOf(target)
+}
+
+function findValueInNestedObject(dict: any, target: string): string {
+    let keys = Object.keys(dict)
+
+    if (keys.includes(target))
+        return dict[target]
+
+    for (let key of keys) {
+        if (typeof dict[key] === "object") {
+            let ret = findValueInNestedObject(dict[key], target)
+            if (ret !== "")
+                return ret;
+        }
+    }
+    return ""
 }
 
 export class CharacterBuilder {
@@ -159,12 +178,36 @@ export class CharacterBuilder {
         this.character.childMemories = lang.memories[tables.childhoodMemories.roll(this.character.charisma).text]
     }
 
+    private setEvents() {
+        const lang = this.languageFile.tables
+
+        let eventsEntry = tables.age.roll()
+        this.character.age = this.languageFile.tables.supplemental.age[eventsEntry.text]
+
+        let eventsCount = eventsEntry.modifier
+        for (let i = 0; i < eventsCount; i++) {
+            let eventCompleteText = tables.lifeEvents.do(0)
+            let eventSplitText = eventCompleteText.split("\n")
+            let eventFinalText = lang.events.lifeevents[eventSplitText[0]]
+            for (let i = 1; i < eventSplitText.length; i++) {
+                let text = ""
+                if (!isNaN(Number(eventSplitText[i])))
+                    text = eventSplitText[i]
+                else
+                    text = findValueInNestedObject(lang, eventSplitText[i])
+                eventFinalText += "\n" + text
+            }
+            this.character.events.push(eventFinalText)
+        }
+    }
+
     public make() {
         this.setRace()
         this.setClass()
         this.setBackground()
         this.setCharisma()
         this.setOrigins()
+        this.setEvents()
 
         return this.character
     }
