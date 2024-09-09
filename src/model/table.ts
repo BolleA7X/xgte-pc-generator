@@ -33,11 +33,11 @@ export class Table implements Action {
         return this.rows[index]
     }
 
-    public do(modifier: number = 0): string {
+    public do(modifier: number = 0): string[] {
         let row = this.roll(modifier)
-        let res = row.text
+        let res = [row.text]
         for (let action of row.actions)
-            res += "\n" + action.do(modifier)
+            res = res.concat(action.do(modifier))
         return res
     }
 }

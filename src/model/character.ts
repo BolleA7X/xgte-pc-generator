@@ -94,7 +94,7 @@ export class CharacterBuilder {
         }
 
         this.character.class = this.languageFile.tables.supplemental.class[classEntry.text]
-        this.character.classReason = this.languageFile.tables.decisions.class[classEntry.actions[0].do(0)]
+        this.character.classReason = this.languageFile.tables.decisions.class[classEntry.actions[0].do(0)[0]]
     }
 
     private setBackground() {
@@ -111,7 +111,7 @@ export class CharacterBuilder {
         }
 
         this.character.background = this.languageFile.tables.supplemental.background[backgroundEntry.text]
-        this.character.bgReason = this.languageFile.tables.decisions.background[backgroundEntry.actions[0].do(0)]
+        this.character.bgReason = this.languageFile.tables.decisions.background[backgroundEntry.actions[0].do(0)[0]]
     }
 
     private setCharisma() {
@@ -146,7 +146,7 @@ export class CharacterBuilder {
         let raceIndex = getIndexOfTable(this.languageFile.tables.supplemental.race, this.character.race)
         let raceEntry = tables.race.pick(raceIndex)
         if (raceEntry.actions.length === 1)
-            this.character.mixedParents = lang.mixedparents[raceEntry.actions[0].do(0)]
+            this.character.mixedParents = lang.mixedparents[raceEntry.actions[0].do(0)[0]]
 
         // Birthplace
         this.character.birthplace = lang.birthplace[tables.birthplace.roll().text]
@@ -170,7 +170,7 @@ export class CharacterBuilder {
             let absentParentEntry = tables.absentParent.roll()
             this.character.absentParents[i] = lang.absentparent[absentParentEntry.text]
             if (absentParentEntry.actions.length === 1)
-                this.character.parentDeath[i] = this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)]
+                this.character.parentDeath[i] = this.languageFile.tables.supplemental.causeofdeath[absentParentEntry.actions[0].do(0)[0]]
         }
         let lifestyleEntry = tables.familyLifestyle.roll()
         this.character.lifestyle = lang.lifestyle[lifestyleEntry.text]
@@ -186,15 +186,14 @@ export class CharacterBuilder {
 
         let eventsCount = eventsEntry.modifier
         for (let i = 0; i < eventsCount; i++) {
-            let eventCompleteText = tables.lifeEvents.do(0)
-            let eventSplitText = eventCompleteText.split("\n")
-            let eventFinalText = lang.events.lifeevents[eventSplitText[0]]
-            for (let i = 1; i < eventSplitText.length; i++) {
+            let eventRolls = tables.lifeEvents.do(0)
+            let eventFinalText = lang.events.lifeevents[eventRolls[0]]
+            for (let i = 1; i < eventRolls.length; i++) {
                 let text = ""
-                if (!isNaN(Number(eventSplitText[i])))
-                    text = eventSplitText[i]
+                if (!isNaN(Number(eventRolls[i])))
+                    text = eventRolls[i]
                 else
-                    text = findValueInNestedObject(lang, eventSplitText[i])
+                    text = findValueInNestedObject(lang, eventRolls[i])
                 eventFinalText += "\n" + text
             }
             this.character.events.push(eventFinalText)

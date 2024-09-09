@@ -1,5 +1,5 @@
 interface Action {
-    do(modifier: number): string;
+    do(modifier: number): string[];
 }
 
 export default Action;

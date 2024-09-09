@@ -23,8 +23,8 @@ class Dice implements Action {
         return sum + this.fixedBonus + modifier;
     }
 
-    public do(modifier: number = 0): string {
-        return this.roll(modifier).toString();
+    public do(modifier: number = 0): string[] {
+        return [this.roll(modifier).toString()];
     }
 }
 
