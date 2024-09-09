@@ -352,6 +352,808 @@ export const wizard = new Table(
     ]
 )
 
+/* ======================================== PERSONALITY ======================================== */
+
+export const acolyteTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@acolyte-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@acolyte-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@acolyte-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@acolyte-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@acolyte-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@acolyte-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@acolyte-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@acolyte-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const acolyteIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@acolyte-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@acolyte-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@acolyte-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@acolyte-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@acolyte-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@acolyte-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const acolyteBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@acolyte-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@acolyte-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@acolyte-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@acolyte-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@acolyte-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@acolyte-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const acolyteFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@acolyte-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@acolyte-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@acolyte-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@acolyte-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@acolyte-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@acolyte-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const charlatanTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@charlatan-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@charlatan-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@charlatan-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@charlatan-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@charlatan-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@charlatan-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@charlatan-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@charlatan-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const charlatanIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@charlatan-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@charlatan-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@charlatan-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@charlatan-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@charlatan-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@charlatan-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const charlatanBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@charlatan-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@charlatan-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@charlatan-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@charlatan-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@charlatan-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@charlatan-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const charlatanFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@charlatan-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@charlatan-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@charlatan-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@charlatan-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@charlatan-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@charlatan-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const criminalTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@criminal-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@criminal-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@criminal-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@criminal-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@criminal-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@criminal-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@criminal-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@criminal-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const criminalIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@criminal-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@criminal-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@criminal-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@criminal-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@criminal-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@criminal-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const criminalBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@criminal-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@criminal-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@criminal-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@criminal-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@criminal-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@criminal-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const criminalFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@criminal-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@criminal-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@criminal-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@criminal-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@criminal-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@criminal-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const entertainerTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@entertainer-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@entertainer-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@entertainer-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@entertainer-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@entertainer-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@entertainer-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@entertainer-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@entertainer-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const entertainerIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@entertainer-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@entertainer-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@entertainer-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@entertainer-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@entertainer-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@entertainer-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const entertainerBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@entertainer-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@entertainer-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@entertainer-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@entertainer-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@entertainer-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@entertainer-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const entertainerFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@entertainer-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@entertainer-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@entertainer-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@entertainer-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@entertainer-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@entertainer-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const folkHeroTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@folkhero-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@folkhero-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@folkhero-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@folkhero-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@folkhero-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@folkhero-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@folkhero-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@folkhero-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const folkHeroIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@folkhero-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@folkhero-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@folkhero-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@folkhero-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@folkhero-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@folkhero-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const folkHeroBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@folkhero-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@folkhero-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@folkhero-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@folkhero-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@folkhero-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@folkhero-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const folkHeroFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@folkhero-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@folkhero-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@folkhero-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@folkhero-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@folkhero-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@folkhero-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const gladiatorTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@gladiator-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@gladiator-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@gladiator-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@gladiator-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@gladiator-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@gladiator-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@gladiator-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@gladiator-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const gladiatorIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@gladiator-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@gladiator-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@gladiator-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@gladiator-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@gladiator-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@gladiator-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const gladiatorBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@gladiator-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@gladiator-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@gladiator-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@gladiator-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@gladiator-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@gladiator-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const gladiatorFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@gladiator-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@gladiator-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@gladiator-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@gladiator-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@gladiator-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@gladiator-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const guildArtisanTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@guildartisan-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@guildartisan-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@guildartisan-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@guildartisan-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@guildartisan-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@guildartisan-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@guildartisan-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@guildartisan-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const guildArtisanIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@guildartisan-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@guildartisan-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@guildartisan-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@guildartisan-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@guildartisan-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@guildartisan-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const guildArtisanBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@guildartisan-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@guildartisan-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@guildartisan-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@guildartisan-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@guildartisan-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@guildartisan-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const guildArtisanFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@guildartisan-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@guildartisan-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@guildartisan-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@guildartisan-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@guildartisan-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@guildartisan-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const hermitTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@hermit-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@hermit-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@hermit-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@hermit-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@hermit-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@hermit-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@hermit-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@hermit-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const hermitIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@hermit-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@hermit-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@hermit-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@hermit-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@hermit-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@hermit-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const hermitBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@hermit-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@hermit-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@hermit-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@hermit-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@hermit-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@hermit-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const hermitFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@hermit-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@hermit-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@hermit-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@hermit-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@hermit-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@hermit-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const knightTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@knight-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@knight-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@knight-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@knight-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@knight-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@knight-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@knight-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@knight-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const knightIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@knight-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@knight-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@knight-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@knight-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@knight-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@knight-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const knightBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@knight-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@knight-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@knight-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@knight-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@knight-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@knight-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const knightFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@knight-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@knight-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@knight-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@knight-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@knight-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@knight-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const nobleTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@noble-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@noble-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@noble-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@noble-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@noble-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@noble-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@noble-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@noble-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const nobleIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@noble-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@noble-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@noble-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@noble-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@noble-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@noble-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const nobleBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@noble-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@noble-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@noble-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@noble-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@noble-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@noble-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const nobleFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@noble-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@noble-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@noble-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@noble-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@noble-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@noble-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const outlanderTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@outlander-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@outlander-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@outlander-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@outlander-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@outlander-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@outlander-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@outlander-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@outlander-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const outlanderIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@outlander-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@outlander-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@outlander-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@outlander-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@outlander-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@outlander-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const outlanderBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@outlander-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@outlander-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@outlander-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@outlander-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@outlander-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@outlander-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const outlanderFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@outlander-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@outlander-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@outlander-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@outlander-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@outlander-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@outlander-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const pirateTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@pirate-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@pirate-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@pirate-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@pirate-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@pirate-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@pirate-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@pirate-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@pirate-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const pirateIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@pirate-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@pirate-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@pirate-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@pirate-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@pirate-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@pirate-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const pirateBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@pirate-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@pirate-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@pirate-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@pirate-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@pirate-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@pirate-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const pirateFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@pirate-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@pirate-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@pirate-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@pirate-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@pirate-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@pirate-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sageTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@sage-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sage-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sage-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sage-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sage-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sage-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@sage-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@sage-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const sageIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sage-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sage-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sage-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sage-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sage-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sage-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sageBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sage-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sage-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sage-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sage-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sage-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sage-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sageFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sage-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sage-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sage-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sage-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sage-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sage-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sailorTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@sailor-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sailor-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sailor-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sailor-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sailor-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sailor-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@sailor-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@sailor-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const sailorIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sailor-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sailor-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sailor-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sailor-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sailor-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sailor-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sailorBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sailor-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sailor-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sailor-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sailor-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sailor-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sailor-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const sailorFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@sailor-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@sailor-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@sailor-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@sailor-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@sailor-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@sailor-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const soldierTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@soldier-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@soldier-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@soldier-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@soldier-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@soldier-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@soldier-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@soldier-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@soldier-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const soldierIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@soldier-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@soldier-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@soldier-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@soldier-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@soldier-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@soldier-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const soldierBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@soldier-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@soldier-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@soldier-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@soldier-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@soldier-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@soldier-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const soldierFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@soldier-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@soldier-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@soldier-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@soldier-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@soldier-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@soldier-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
+export const urchinTraits = new Table(
+    new Dice(1, 8),
+    [
+        {limit: 1, text: "@urchin-traits-0", modifier: 0, actions: []},
+        {limit: 2, text: "@urchin-traits-1", modifier: 0, actions: []},
+        {limit: 3, text: "@urchin-traits-2", modifier: 0, actions: []},
+        {limit: 4, text: "@urchin-traits-3", modifier: 0, actions: []},
+        {limit: 5, text: "@urchin-traits-4", modifier: 0, actions: []},
+        {limit: 6, text: "@urchin-traits-5", modifier: 0, actions: []},
+        {limit: 7, text: "@urchin-traits-6", modifier: 0, actions: []},
+        {limit: 8, text: "@urchin-traits-7", modifier: 0, actions: []},
+    ]
+)
+
+export const urchinIdeals = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@urchin-ideals-0", modifier: 0, actions: []},
+        {limit: 2, text: "@urchin-ideals-1", modifier: 0, actions: []},
+        {limit: 3, text: "@urchin-ideals-2", modifier: 0, actions: []},
+        {limit: 4, text: "@urchin-ideals-3", modifier: 0, actions: []},
+        {limit: 5, text: "@urchin-ideals-4", modifier: 0, actions: []},
+        {limit: 6, text: "@urchin-ideals-5", modifier: 0, actions: []},
+    ]
+)
+
+export const urchinBonds = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@urchin-bonds-0", modifier: 0, actions: []},
+        {limit: 2, text: "@urchin-bonds-1", modifier: 0, actions: []},
+        {limit: 3, text: "@urchin-bonds-2", modifier: 0, actions: []},
+        {limit: 4, text: "@urchin-bonds-3", modifier: 0, actions: []},
+        {limit: 5, text: "@urchin-bonds-4", modifier: 0, actions: []},
+        {limit: 6, text: "@urchin-bonds-5", modifier: 0, actions: []},
+    ]
+)
+
+export const urchinFlaws = new Table(
+    new Dice(1, 6),
+    [
+        {limit: 1, text: "@urchin-flaws-0", modifier: 0, actions: []},
+        {limit: 2, text: "@urchin-flaws-1", modifier: 0, actions: []},
+        {limit: 3, text: "@urchin-flaws-2", modifier: 0, actions: []},
+        {limit: 4, text: "@urchin-flaws-3", modifier: 0, actions: []},
+        {limit: 5, text: "@urchin-flaws-4", modifier: 0, actions: []},
+        {limit: 6, text: "@urchin-flaws-5", modifier: 0, actions: []},
+    ]
+)
+
 /* ======================================== SUPPLEMENTAL ======================================== */
 
 /**
@@ -390,22 +1192,22 @@ export const alignment = new Table(
 export const background = new Table(
     new Dice(1, 100),
     [
-        {limit:   6, text: "@background-0",  modifier: 0, actions: [acolyte]},
-        {limit:  12, text: "@background-1",  modifier: 0, actions: [charlatan]},
-        {limit:  18, text: "@background-2",  modifier: 0, actions: [criminal]},
-        {limit:  25, text: "@background-3",  modifier: 0, actions: [entertainer]},
-        {limit:  31, text: "@background-4",  modifier: 0, actions: [folkHero]},
-        {limit:  37, text: "@background-5",  modifier: 0, actions: [gladiator]},
-        {limit:  43, text: "@background-6",  modifier: 0, actions: [guildArtisan]},
-        {limit:  50, text: "@background-7",  modifier: 0, actions: [hermit]},
-        {limit:  56, text: "@background-8",  modifier: 0, actions: [knight]},
-        {limit:  62, text: "@background-9",  modifier: 0, actions: [noble]},
-        {limit:  68, text: "@background-10", modifier: 0, actions: [outlander]},
-        {limit:  75, text: "@background-11", modifier: 0, actions: [pirate]},
-        {limit:  81, text: "@background-12", modifier: 0, actions: [sage]},
-        {limit:  87, text: "@background-13", modifier: 0, actions: [sailor]},
-        {limit:  93, text: "@background-14", modifier: 0, actions: [soldier]},
-        {limit: 100, text: "@background-15", modifier: 0, actions: [urchin]},
+        {limit:   6, text: "@background-0",  modifier: 0, actions: [acolyte, acolyteTraits, acolyteIdeals, acolyteBonds, acolyteFlaws]},
+        {limit:  12, text: "@background-1",  modifier: 0, actions: [charlatan, charlatanTraits, charlatanIdeals, charlatanBonds, charlatanFlaws]},
+        {limit:  18, text: "@background-2",  modifier: 0, actions: [criminal, criminalTraits, criminalIdeals, criminalBonds, criminalFlaws]},
+        {limit:  25, text: "@background-3",  modifier: 0, actions: [entertainer, entertainerTraits, entertainerIdeals, entertainerBonds, entertainerFlaws]},
+        {limit:  31, text: "@background-4",  modifier: 0, actions: [folkHero, folkHeroTraits, folkHeroIdeals, folkHeroBonds, folkHeroFlaws]},
+        {limit:  37, text: "@background-5",  modifier: 0, actions: [gladiator, gladiatorTraits, gladiatorIdeals, gladiatorBonds, gladiatorFlaws]},
+        {limit:  43, text: "@background-6",  modifier: 0, actions: [guildArtisan, guildArtisanTraits, guildArtisanIdeals, guildArtisanBonds, guildArtisanFlaws]},
+        {limit:  50, text: "@background-7",  modifier: 0, actions: [hermit, hermitTraits, hermitIdeals, hermitBonds, hermitFlaws]},
+        {limit:  56, text: "@background-8",  modifier: 0, actions: [knight, knightTraits, knightIdeals, knightBonds, knightFlaws]},
+        {limit:  62, text: "@background-9",  modifier: 0, actions: [noble, nobleTraits, nobleIdeals, nobleBonds, nobleFlaws]},
+        {limit:  68, text: "@background-10", modifier: 0, actions: [outlander, outlanderTraits, outlanderIdeals, outlanderBonds, outlanderFlaws]},
+        {limit:  75, text: "@background-11", modifier: 0, actions: [pirate, pirateTraits, pirateIdeals, pirateBonds, pirateFlaws]},
+        {limit:  81, text: "@background-12", modifier: 0, actions: [sage, sageTraits, sageIdeals, sageBonds, sageFlaws]},
+        {limit:  87, text: "@background-13", modifier: 0, actions: [sailor, sailorTraits, sailorIdeals, sailorBonds, sailorFlaws]},
+        {limit:  93, text: "@background-14", modifier: 0, actions: [soldier, soldierTraits, soldierIdeals, soldierBonds, soldierFlaws]},
+        {limit: 100, text: "@background-15", modifier: 0, actions: [urchin, urchinTraits, urchinIdeals, urchinBonds, urchinFlaws]},
     ]
 )
 

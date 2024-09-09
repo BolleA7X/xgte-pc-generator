@@ -37,7 +37,7 @@ function Navbar(props: NavbarProps) {
           {languageFile.ui.commands["@origins-tab"]}
         </button>
         <button className={props.selected === 2 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(2)}>
-          {languageFile.ui.commands["@decisions-tab"]}
+          {languageFile.ui.commands["@personality-tab"]}
         </button>
         <button className={props.selected === 3 ? "tab selectedTab" : "tab unselectedTab"} onClick={() => props.setSelected(3)}>
           {languageFile.ui.commands["@events-tab"]}
@@ -152,6 +152,32 @@ function OriginsPage(props: PageProps) {
   )
 }
 
+function PersonalityPage(props: PageProps) {
+  const languageFile = useContext(LanguageContext);
+
+  return (
+    <div className="page">
+      <h1>{languageFile.ui.pages[2]["@title"]}</h1>
+      <PageSection
+        title={languageFile.ui.pages[2]["@traits-section"]}
+        subsections={[{label: "", text: props.character.traits}]}
+      />
+      <PageSection
+        title={languageFile.ui.pages[2]["@ideals-section"]}
+        subsections={[{label: "", text: props.character.ideals}]}
+      />
+      <PageSection
+        title={languageFile.ui.pages[2]["@bonds-section"]}
+        subsections={[{label: "", text: props.character.bonds}]}
+      />
+      <PageSection
+        title={languageFile.ui.pages[2]["@flaws-section"]}
+        subsections={[{label: "", text: props.character.flaws}]}
+      />
+    </div>
+  )
+}
+
 function EventsPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -180,7 +206,7 @@ function CharacterView(props: CharacterViewProps) {
   let pages = [
     <GeneralPage character={props.character} />,
     <OriginsPage character={props.character} />,
-    <h1>Page 3</h1>,
+    <PersonalityPage character={props.character}/>,
     <EventsPage character={props.character} />,
   ]
 

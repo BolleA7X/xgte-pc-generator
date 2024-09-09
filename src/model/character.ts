@@ -29,6 +29,11 @@ export class Character {
     public childHome: string = ""
     public childMemories: string = ""
 
+    public traits: string = ""
+    public ideals: string = ""
+    public bonds: string = ""
+    public flaws: string = ""
+
     public events: string[] = []
 }
 
@@ -178,6 +183,16 @@ export class CharacterBuilder {
         this.character.childMemories = lang.memories[tables.childhoodMemories.roll(this.character.charisma).text]
     }
 
+    private setPersonality() {
+        let backgroundIndex = getIndexOfTable(this.languageFile.tables.supplemental.background, this.character.background)
+        let backgroundEntry = tables.background.pick(backgroundIndex)
+
+        this.character.traits = this.languageFile.tables.personality[backgroundEntry.actions[1].do(0)[0]]
+        this.character.ideals = this.languageFile.tables.personality[backgroundEntry.actions[2].do(0)[0]]
+        this.character.bonds = this.languageFile.tables.personality[backgroundEntry.actions[3].do(0)[0]]
+        this.character.flaws = this.languageFile.tables.personality[backgroundEntry.actions[4].do(0)[0]]
+    }
+
     private setEvents() {
         const lang = this.languageFile.tables
 
@@ -206,6 +221,7 @@ export class CharacterBuilder {
         this.setBackground()
         this.setCharisma()
         this.setOrigins()
+        this.setPersonality()
         this.setEvents()
 
         return this.character
