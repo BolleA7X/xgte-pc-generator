@@ -6,6 +6,7 @@ import './view.css'
 type NavbarProps = {
   selected: number;
   setSelected: (id: React.SetStateAction<number>) => void;
+  save: () => void;
   reset: () => void;
 }
 
@@ -43,7 +44,7 @@ function Navbar(props: NavbarProps) {
           {languageFile.ui.commands["@events-tab"]}
         </button>
         <br></br>
-        <button id="saveButton" className="tab characterButton">
+        <button id="saveButton" className="tab characterButton" onClick={() => props.save()}>
           {languageFile.ui.commands["@save-button"]}
         </button>
         <button id="resetButton" className="tab characterButton" onClick={() => props.reset()}>
@@ -202,6 +203,30 @@ function EventsPage(props: PageProps) {
 
 function CharacterView(props: CharacterViewProps) {
   const [selected, setSelected] = useState(0)
+
+  const save = () => {
+    // Generate the file
+    const fileName = "character-" + (new Date(Date.now())).valueOf().toString() + ".json"
+    const fileContent = JSON.stringify(props.character, null, '\t')
+    
+    // Create a Blob with the file content
+    const blob = new Blob([fileContent], { type: "text/plain" })
+    
+    // Create a URL for the Blob
+    const url = URL.createObjectURL(blob)
+    
+    // Create a link element and programmatically click it
+    let a = document.createElement("a")
+    a.hidden = true
+    a.href = url
+    a.download = fileName
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    
+    // Step 5: Clean up the URL object
+    URL.revokeObjectURL(url);
+  }
   
   let pages = [
     <GeneralPage character={props.character} />,
@@ -212,7 +237,7 @@ function CharacterView(props: CharacterViewProps) {
 
   return (
     <>
-      <Navbar selected={selected} setSelected={setSelected} reset={props.reset}></Navbar>
+      <Navbar selected={selected} setSelected={setSelected} save={save} reset={props.reset}></Navbar>
       {pages[selected]}
     </>
   )
