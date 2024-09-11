@@ -3,6 +3,9 @@ import { LanguageContext } from '../context'
 import { Character } from '../model/character'
 import './view.css'
 
+/**
+ * Properties passed to the Navbar component
+ */
 type NavbarProps = {
   selected: number;
   setSelected: (id: React.SetStateAction<number>) => void;
@@ -10,6 +13,9 @@ type NavbarProps = {
   reset: () => void;
 }
 
+/**
+ * Properties passed to the PageSection component
+ */
 type SectionProps = {
   title: string;
   subsections: {
@@ -18,6 +24,9 @@ type SectionProps = {
   }[]
 }
 
+/**
+ * Properties passed to all xPage components
+ */
 type PageProps = { character: Character }
 
 type CharacterViewProps = {
@@ -25,6 +34,9 @@ type CharacterViewProps = {
   reset: () => void;
 }
 
+/**
+ * Navbar at the top of the Character view
+ */
 function Navbar(props: NavbarProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -55,6 +67,9 @@ function Navbar(props: NavbarProps) {
   )
 }
 
+/**
+ * A section of a page, made of a title and one or more subsections. Subsections have a bold label, followed by some text.
+ */
 function PageSection(props: SectionProps) {
   let subsections: JSX.Element[] = []
 
@@ -76,6 +91,9 @@ function PageSection(props: SectionProps) {
 
 /* ================================================ PAGES ================================================ */
 
+/**
+ * Page that contains the character's general information (age, race, class, ...)
+ */
 function GeneralPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -112,6 +130,9 @@ function GeneralPage(props: PageProps) {
   )
 }
 
+/**
+ * Page that contains the character's origins (family, childhood, ...)
+ */
 function OriginsPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -153,6 +174,9 @@ function OriginsPage(props: PageProps) {
   )
 }
 
+/**
+ * Page that contains the character's personality (traits, flaws, ...)
+ */
 function PersonalityPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -179,6 +203,9 @@ function PersonalityPage(props: PageProps) {
   )
 }
 
+/**
+ * Page that contains the list of events the character experienced
+ */
 function EventsPage(props: PageProps) {
   const languageFile = useContext(LanguageContext);
 
@@ -201,9 +228,13 @@ function EventsPage(props: PageProps) {
   )
 }
 
+/**
+ * Complete Character view, made of its pages and a navbar to navigate them
+ */
 function CharacterView(props: CharacterViewProps) {
   const [selected, setSelected] = useState(0)
 
+  // This is the only way I found to force the download of a text file
   const save = () => {
     // Generate the file
     const fileName = "character-" + (new Date(Date.now())).valueOf().toString() + ".json"
@@ -224,7 +255,7 @@ function CharacterView(props: CharacterViewProps) {
     a.click()
     document.body.removeChild(a)
     
-    // Step 5: Clean up the URL object
+    // Clean up the URL object
     URL.revokeObjectURL(url);
   }
   

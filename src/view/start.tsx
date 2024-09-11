@@ -2,11 +2,17 @@ import { useContext, useEffect } from "react";
 import { LanguageContext } from '../context'
 import './view.css'
 
+/**
+ * Properties passed to the Dropdown component
+ */
 type DropdownProps = {
   langObject: any;
   setter: (value: string) => void;
 }
 
+/**
+ * Properties passed to the StartView component
+ */
 type StartViewProps = {
   setRace: (value: string) => void;
   setClass: (value: string) => void;
@@ -15,6 +21,9 @@ type StartViewProps = {
   startGeneration: () => void;
 }
 
+/**
+ * Dropdown menu to allow the user to customize the random generation
+ */
 function Dropdown(props: DropdownProps) {
   let elements: JSX.Element[] = []
   let firstItem = true
@@ -43,6 +52,9 @@ function Dropdown(props: DropdownProps) {
   )
 }
 
+/**
+ * Complete Start view, made of dropdown menus and a button to start the random character generation
+ */
 function StartView(props: StartViewProps) {
   const languageFile = useContext(LanguageContext);
 

@@ -12,6 +12,9 @@ const languageFiles = {
   "en": stringsEN
 }
 
+/**
+ * App entry point. If a character has been generated it shows the CharacterView, otherwise it shows the StartView
+ */
 function App() {
   const [race, setRace] = useState("")
   const [classs, setClass] = useState("")
@@ -29,6 +32,7 @@ function App() {
     />
   }
   else {
+    // Character generation start
     let cb = new CharacterBuilder(languageFile, {
       race: race,
       class: classs,
@@ -37,6 +41,7 @@ function App() {
     })
 
     let character = cb.make()
+    // Character generation end
 
     view = <CharacterView
       character={character}

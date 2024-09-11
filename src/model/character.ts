@@ -1,6 +1,9 @@
 import Dice from './dice'
 import * as tables from './tables'
 
+/**
+ * Options selected by the user via the dropdown menus
+ */
 type UserSelection = {
     race: string;
     class: string;
@@ -8,6 +11,11 @@ type UserSelection = {
     charisma: string;
 }
 
+/**
+ * Data associated to the generated character
+ * 
+ * Awful but functional
+ */
 export class Character {
     public age: string = ""
     public race: string = ""
@@ -37,11 +45,31 @@ export class Character {
     public events: string[] = []
 }
 
+/**
+ * Finds the index of a table entry whose text matches a target string.
+ * 
+ * Tipical use: check if the user input (dropdown menu selection) is valid and retrieve
+ * the index of the table row that matches the user selection
+ * 
+ * @param tableDict Map containing the possible text entries
+ * @param target Target string to find
+ * @returns The index of the target string inside the map if found, -1 otherwise
+ */
 function getIndexOfTable(tableDict: any, target: string): number {
     let values = Object.keys(tableDict).map<any>((key) => tableDict[key])
     return values.indexOf(target)
 }
 
+/**
+ * Looks for a specific key inside a nested object
+ * 
+ * Tipical use: get a string from the language file when it is not known the exact sub-object to look for
+ * (the language file is a nested object, maybe not the smartest choice...)
+ * 
+ * @param dict Map where to perform the search
+ * @param target Target key to find
+ * @returns The value associated to the key if found, an empty string otherwise
+ */
 function findValueInNestedObject(dict: any, target: string): string {
     let keys = Object.keys(dict)
 
@@ -58,6 +86,9 @@ function findValueInNestedObject(dict: any, target: string): string {
     return ""
 }
 
+/**
+ * Builds a character by rolling on the tables in a specific manner
+ */
 export class CharacterBuilder {
     private languageFile: any;
     private userSelection: UserSelection;
@@ -141,6 +172,8 @@ export class CharacterBuilder {
         this.character.charisma = charisma
     }
 
+    /* Here I got tired of creating a method for each character property */
+
     private setOrigins() {
         const lang = this.languageFile.tables.origins
 
@@ -215,6 +248,10 @@ export class CharacterBuilder {
         }
     }
 
+    /**
+     * Generates and returns a character
+     * @returns The generated character
+     */
     public make() {
         this.setRace()
         this.setClass()
